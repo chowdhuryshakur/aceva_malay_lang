@@ -1,0 +1,286 @@
+version: '3.1'
+intents:
+- affirm
+- appointment
+- bot_challenge
+- deny
+- faq_ask_about_wipdata
+- goodbye
+- greet
+- prescription_refills
+- procedure_cost_estimation
+- tell_age
+- tell_gender
+- tell_mobile
+- tell_name
+- tell_symptom
+- tell_department
+- tell_doctor
+- tell_schedule
+- main_menu
+# - tell_update_slot
+- tell_procedure
+- update_slot
+- average_total_charge
+- average_medicare_charge
+- cheaper_city
+- cheaper_provider
+- tell_state
+- tell_city
+- refill_request
+- human_handoff
+- finishing_conversation
+entities:
+- name
+- mobile
+- age
+- gender
+- department
+- doctor
+- date
+- time
+- symptom
+- slot
+- procedure
+- state
+- city
+- refill_items
+
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
+  mobile:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: mobile
+  age:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: age
+  gender:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: gender
+  department:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: department
+  doctor:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: doctor
+  date:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: date
+  time:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: time
+  symptom:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: symptom
+  slot:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: slot
+  procedure:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: procedure
+  state:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: state
+  city:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: city
+  refill_items:
+    type: list
+    mappings:
+    - type: from_entity
+      entity: refill_items
+responses:
+  utter_ask_update_slot:
+  - text: Maklumat manakah yang ingin anda ubah? E.g. Saya mahu menukar umur saya.
+  utter_ask_name:
+  - text: Hai, Semoga anda mempunyai hari yang baik. Bolehkah kami mulakan dengan nama anda?
+  utter_greet:
+  - text: Hai {name}, saya pembantu penjagaan kesihatan anda! Bagaimana saya boleh tolong awak?
+    buttons:
+    - title: Buat temujanji
+      payload: /appointment
+    - title: Anggaran kos prosedur
+      payload: /procedure_cost_estimation
+    - title: Isi semula preskripsi
+      payload: /prescription_refills
+  - text: Helo {name}, saya ACEVA seorang pembantu penjagaan kesihatan! Bagaimana saya boleh tolong awak?
+    buttons:
+    - title: Buat temujanji
+      payload: /appointment
+    - title: Anggaran kos prosedur
+      payload: /procedure_cost_estimation
+    - title: Isi semula preskripsi
+      payload: /prescription_refills
+  - text: Hai {name}, saya ACEVA pembantu penjagaan kesihatan anda! Bagaimana saya boleh tolong awak?
+    buttons:
+    - title: Buat temujanji
+      payload: /appointment
+    - title: Anggaran kos prosedur
+      payload: /procedure_cost_estimation
+    - title: Isi semula preskripsi
+      payload: /prescription_refills
+  utter_anything_else:
+  - text: Bagaimana saya boleh tolong awak?
+    buttons:
+    - title: Buat temujanji
+      payload: /appointment
+    - title: Anggaran kos prosedur
+      payload: /procedure_cost_estimation
+    - title: Isi semula preskripsi
+      payload: /prescription_refills
+  utter_procedurs_options:
+  - text: Apa yang anda ingin ketahui daripada prosedur ini?
+    buttons:
+    - title: Purata Jumlah Caj
+      payload: /average_total_charge
+    - title: Caj Purata Dilindungi oleh Medicare  
+      payload: /average_medicare_charge
+    - title: Bandar yang lebih murah
+      payload: /cheaper_city
+    - title: Pembekal Lebih Murah
+      payload: /cheaper_provider
+  utter_goodbye:
+  - text: Semoga hari anda indah {name}!
+    buttons:
+    - title: Main menu
+      payload: /main_menu
+  utter_smile:
+  - text: 😊
+  utter_iamabot:
+  - text: Saya pembantu maya di sini untuk membantu dengan soalan anda.
+  utter_ask_about_wipdata:
+  - text: Wipdata ialah syarikat teknologi di Malaysia yang kebanyakannya bekerja menggunkan "Artificial Intelligent" dan automasi data.
+  utter_out_of_scope:
+  - text: Maaf, saya tidak dapat menangani permintaan itu. Untuk menyambung kepada "Live Agent" sila klik butang.
+    buttons:
+    - title: Live human agent
+      payload: https://t.me/wipdatabotchannel
+  utter_handoff:
+  - text: "Untuk menyambung kepada Live Agent sila klik butang."
+    buttons:
+    - title: Live human agent
+      payload: https://t.me/wipdatabotchannel
+  utter_please_rephrase:
+  - text: Saya minta maaf, saya tidak begitu memahaminya. Bolehkah anda mengutarakan semula?
+  utter_ask_mobile:
+  - text: Sila berikan nombor telefon bimbit anda (ia mestilah sekurang-kurangnya 10 digit).
+  utter_ask_age:
+  - text: "Berapa umur anda? Cth. 25 tahun, 50 tahun"
+  utter_ask_gender:
+  - text: Apakah jantina anda?
+    buttons:
+    - title: Lelaki
+      payload: Lelaki
+    - title: Perempuan
+      payload: Perempuan
+    - title: Lain
+      payload: Lain
+  utter_ask_department:
+  - custom:
+      text: "Berdasarkan gejala anda, berikut adalah beberapa cadangan jabatan bagi kawasan pakar. Untuk meneruskan, sila sahkan 'yes'."
+      payload: "{}"
+  utter_ask_department_drop:
+  - custom:
+      text: "Pilih a"
+      payload: "{}"
+  utter_ask_doctor:
+  - custom:
+      text: "Pilih a"
+      payload: "{}"
+  utter_ask_schedule:
+  - custom:
+      text: "Pilih a"
+      payload: "{}"
+  utter_ask_symptom:
+  - text: Apa perasaan anda hari ini? Bolehkah saya tahu simptom anda?
+  - text: Apakah gejala anda?
+  utter_slots_values:
+  - text: '{name} terima kasih atas maklumat anda. Maklumat yang anda berikan ialah: <br /><br /> 1) mobile- {mobile} <br /> 2) Umur- {age} <br /> 3) Jantina- {gender} <br /> 4) jabatan- {department} <br /> 5) doktor- {doctor} <br /> 6) temujanji- {date} {time} <br /> 7) gejala anda: {symptom}. <br /><br /> Adakah ini betul?'
+  utter_drop_value:
+  - custom:
+      text: "Pilih a"
+      payload: "{}"
+  utter_report:
+  - custom:
+      text: "Berikut adalah hasil pertanyaan. Bolehkah saya membantu anda dengan apa-apa lagi?"
+      payload: "{}"
+  utter_general_custom:
+  - custom:
+      text: "Berikut adalah hasil pertanyaan."
+      payload: "{}"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- validate_appointment_form
+- action_utter_ask_slot
+- action_utter_procedure
+- action_utter_submit
+- utter_anything_else
+- utter_ask_age
+- utter_ask_gender
+- utter_ask_schedule
+- utter_ask_doctor
+- utter_ask_department
+- utter_ask_department_drop
+- utter_ask_name
+- utter_ask_symptom
+- utter_ask_update_slot
+- utter_goodbye
+- utter_greet
+- utter_please_rephrase
+- utter_slots_values
+- utter_drop_value
+- utter_report
+- utter_general_custom
+- action_utter_state
+- action_utter_cheaper_city
+- action_utter_city
+- action_utter_cheaper_provider
+- action_utter_average_charge
+- action_utter_average_medicare
+- action_utter_department_drop
+- action_utter_department
+- action_utter_doctor
+- action_utter_schedule
+- action_check_for_refills
+- action_submit_refill_request
+- utter_smile
+- action_tell_name
+forms:
+  appointment_form:
+    ignored_intents:
+    - tell_name
+    required_slots:
+    - mobile
+    - age
+    - gender
+    - symptom

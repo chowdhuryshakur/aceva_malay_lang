@@ -1,0 +1,860 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - salam
+    - Assalamualaikum
+    - hello
+    - hi
+    - Selamat
+    - Selamat Pagi
+    - Selamat Petang
+    - Selamat Malam
+    - hey there
+    - Ayuh
+    - hey dude
+- regex: tell_name
+  examples: |
+    - namehide 
+- intent: tell_name
+  examples: |
+    - Nama namehide saya Justine Kuper.
+    - Saya John.
+    - Saya ialah Anaz Abdul Karim.
+    - Jack.
+    - Borhan.
+- intent: goodbye
+  examples: |
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - Selamat tinggal
+    - jumpa lg
+    - kita berjumpa lagi
+    - bye bye
+    - Jumpa lagi
+- intent: finishing_conversation
+  examples: |
+    - ok
+    - okay
+    - thanks
+    - terima kasih
+    - okay terima kasih
+    - tq
+    - alright
+- intent: affirm
+  examples: |
+    - yes
+    - yap
+    - betul
+    - betul tu
+    - Yes betul la tu
+    - ok betul
+- intent: deny
+  examples: |
+    - x
+    - tak
+    - no tq
+    - no terima kasih
+    - never
+    - saya tak pasti
+    - saya tak suka
+    - tidak
+    - not really
+    - not correct
+    - it is not correct
+    - na
+    - No
+- intent: bot_challenge
+  examples: |
+    - adakah awak bot?
+    - adakah awak manusia?
+    - adakah saya bercakap kepada bot?
+    - adakah saya bercakap kepada manusia?
+- intent: faq_ask_about_wipdata
+  examples: |
+    - apakah itu Wipdata?
+    - apa tu Wipdata?
+    - cerita pada saya apa tu Wipdata?
+    - bole saya tahu apa tu Wipdata?
+- intent: out_of_scope
+  examples: |
+    - saya nak order makanan
+    - apakah 2 + 2?
+    - sapakah US President?
+- regex: age
+  examples: |
+    - \d{1,3}
+- regex: mobile
+  examples: |
+    - \d{10,12}
+- intent: tell_mobile
+  examples: |
+    - nombor adalah  [01843727741](mobile)
+    - Nombor saya adalah [01843727741](mobile)
+    - Nombor  [4637457382](mobile)
+    - [33315327130](mobile)
+- intent: tell_age
+  examples: |
+    - Umur saya [27](age) tahun.
+    - [30](age) tahun.
+    - Umur saya ialah  [97](age) tahun.
+    - Saya [14](age) tahun.
+    - [40](age)
+    - [50](age) thn.
+    - [50](age) .
+    - [50](age) tn.
+- intent: tell_gender
+  examples: |
+    - I am [Lelaki](gender).
+    - [Lelaki](gender).
+    - [Perempuan](gender).
+    - [Lain](gender).
+    - I am [Lain](gender).
+- intent: tell_department
+  examples: |
+    - Jabatan ialah  [Cardiology](department)
+    - Jabatan ialah  [Neurology](department)
+    - Jabatan ialah  [Dermatology](department)
+    - Jabatan ialah  [Oncology](department)
+    - Jabatan ialah  [Psychiatry](department)
+    - Jabatan ialah  [Urology](department)
+    - Jabatan ialah  [Physician](department)
+    - Jabatan ialah  [Sports Surgery](department)
+    - Jabatan ialah  [Orthopaedic Surgery](department)
+    - Jabatan ialah  [Gastroenterology and Hepatology](department)
+- intent: tell_doctor
+  examples: |
+    - Doktor ialah [Dr Ahmad Nizar Bin Jamaluddin](doctor)
+    - Doktor ialah [Dr Choy Chun Ngok](doctor)
+    - Doktor ialah [Dr Jeyamalar Rajadurai](doctor)
+    - Doktor ialah [Dr Kannan G. Pasamanickam](doctor)
+    - Doktor ialah [Dr Koh Kok Wei](doctor)
+    - Doktor ialah [Dr Shamruz Khan Akerem Khan](doctor)
+    - Doktor ialah [Dr Abel W.K. Arumugam](doctor)
+    - Doktor ialah [Dr Cha Kar Huei](doctor)
+    - Doktor ialah [Dr Emmanuel Peter](doctor)
+    - Doktor ialah [Dr Mohd Hanis Hj Ahmad](doctor)
+    - Doktor ialah [Dr Ragu Ramasamy](doctor)
+    - Doktor ialah [Dr Ong Kee Thiam](doctor)
+    - Doktor ialah [Dr Loh Pei Kee](doctor)
+    - Doktor ialah [Dr Siva Seeta Ramaiah](doctor)
+    - Doktor ialah [Dr Yong Fee Mann](doctor)
+    - Doktor ialah [Dr Sherrini Bazir Ahmad](doctor)
+    - Doktor ialah [Dr C K Ranjeev Prabhakeran](doctor)
+    - Doktor ialah [Dr Chen Harn Chin](doctor)
+    - Doktor ialah [Dr Ganesalingam Kanagasabai](doctor)
+    - Doktor ialah [Dr Maylene Kok](doctor)
+    - Doktor ialah [Dato Dr Anuar Bin Onah DSIS](doctor)
+    - Doktor ialah [Dr Appasamy Velu](doctor)
+    - Doktor ialah [Dr Chan Kin Yuen](doctor)
+    - Doktor ialah [Dr Chooi Yue Seng](doctor)
+    - Doktor ialah [Dr Lee Chong Meng](doctor)
+    - Doktor ialah [Dr Loke Yean Hwe](doctor)
+    - Doktor ialah [Dr Reminder Kaur Santha Singh](doctor)
+    - Doktor ialah [Dr Siow Yuen Chin](doctor)
+    - Doktor ialah [Dr Ting Joe Hang](doctor)
+    - Doktor ialah [Dr Wan Izwin Wan Hassan](doctor)
+    - Doktor ialah [Dr Bala Sundaram Mariappan](doctor)
+    - Doktor ialah [Dr Lee Boon Cheok](doctor)
+    - Doktor ialah [Dr Peter Ng Eng Pin](doctor)
+    - Doktor ialah [Prof Dato Dr Tan Hui Meng](doctor)
+    - Doktor ialah [Dr Mohd Rusdi Abdullah](doctor)
+    - Doktor ialah [Dr Ng Wuey Min](doctor)
+    - Doktor ialah [Dr Foo Yoke Ching](doctor)
+    - Doktor ialah [Dr Mastura MD Yusof](doctor)
+    - Doktor ialah [Dr Matin Mellor Abdullah](doctor)
+    - Doktor ialah [Dr Ng Yi Siang](doctor)
+    - Doktor ialah [Dr Vaishnavi Jeyasingam](doctor)
+    - Doktor ialah [Dr Winnie Ng Nyek Ping](doctor)
+    - Doktor ialah [Dr Yap Beng Khiong](doctor)
+    - Doktor ialah [Dr Chng Chin Chwen](doctor)
+    - Doktor ialah [Dr Chang Chee Khong](doctor)
+    - Doktor ialah [Dr Loh Liew Cheng](doctor)
+    - Doktor ialah [Dr Yap Yen Piow](doctor)
+- intent: tell_schedule
+  examples: |
+    - Temujanji anda ialah [3/16/2023](date), [10:10:00 AM](time)
+    - Temujanji anda ialah [1/15/2023](date), [03:50:00 AM](time)
+    - Temujanji anda ialah [4/20/2023](date), [03:50:00 AM](time)
+    - Temujanji anda ialah [12/15/2023](date), [09:00:00 PM](time)
+    - Temujanji anda ialah [5/30/2023](date), [11:55:00 PM](time)
+- intent: tell_symptom
+  examples: |
+    - Saya ada [Flu](symptom), [fever](symptom), [cough](symptom), [Migrain](symptom)
+    - Saya ada serious [Back pain](symptom), [fever](symptom)
+    - Suffering from [Flue](symptom), [headache](symptom)
+    - Saya ada [Upper abdominal pain](symptom), [Upper belly pain](symptom), [Lower abdominal pain](symptom)
+    - Saya ada [Boil (Furuncle)](symptom), [Alcohol abuse](symptom), [Excessive drinking](symptom)
+    - Saya ada [Nervousness](symptom), [Arm ache or pain](symptom), [Back ache or pain](symptom)
+    - Saya ada [Easy bruising](symptom), [Spontaneous bleeding](symptom), [Blood in vomit](symptom)
+    - Saya ada [Pain or soreness of breast](symptom), [Calf pain](symptom), [Lower leg pain](symptom)
+    - Saya ada [Shakes](symptom), [Rigors](symptom), [Change in behavior](symptom)
+    - Saya ada [Cough](symptom), [Dark stools](symptom), [Black stools](symptom)
+    - Saya ada [Dizziness](symptom), [Lightheaded](symptom), [Double vision (Diplopia)](symptom)
+    - Saya ada [Elbow ache or pain](symptom), [Eye pain (Irritation)](symptom), [Facial pain](symptom)
+    - Saya ada [Passing out](symptom), [Fever](symptom), [Elevated temperature](symptom)
+    - Saya ada [Flank pain](symptom), [Side pain](symptom), [Frequent urination (Frequency)](symptom)
+    - Saya ada [Groin pain](symptom), [Delusions or hallucinations](symptom), [Hand, finger ache or pain](symptom)
+    - Saya ada [Head pain](symptom), [Heel pain](symptom), [Heat illness](symptom)
+    - Saya ada [Urticaria (Hives)](symptom), [Hoarse voice](symptom), [Hypothermia (Low temperature)](symptom)
+    - Saya ada [Leaking urine](symptom), [Insect sting](symptom), [Insect bite](symptom)
+    - Saya ada [Joint pain](symptom), [Kidney pain (Flank pain)](symptom), [Knee pain](symptom)
+    - Saya ada [Swelling of both legs](symptom), [Lower extremity edema (swelling)](symptom), [Lethargy (Sluggishness)](symptom)
+    - Saya ada [Muscle aches](symptom), [Nail Injury](symptom), [Nasal bleeding](symptom)
+    - Saya ada [Nausea](symptom), [Neck ache or pain](symptom), [Neck swelling](symptom)
+    - Saya ada [Tingling](symptom), [Paresthesias (Numbness)](symptom), [Obesity](symptom)
+    - Saya ada [Painful urination](symptom), [Heart pulsations and palpitations](symptom), [Skipped heart beat](symptom)
+    - Saya ada [Penis pain](symptom), [Poisoning](symptom), [Pregnancy problem](symptom)
+    - Saya ada [Rash](symptom), [Rectal pain](symptom), [Rectal swelling](symptom)
+    - Saya ada [Seizure](symptom), [Shortness of breath](symptom), [Shoulder ache or pain](symptom)
+    - Saya ada [Snake bite](symptom), [Sore throat](symptom), [Speech problem](symptom)
+    - Saya ada [Spider bite](symptom), [Substance abuse (Drug abuse)](symptom), [Suicidal tendencies](symptom)
+    - Saya ada [Toe pain](symptom), [Tooth pain](symptom), [Dental problem](symptom)
+    - Saya ada [Unsteady gait (Trouble walking)](symptom), [Vaginal bleeding](symptom), [Vaginal bleeding after menopause](symptom)
+    - Saya ada [Vaginal itching](symptom), [Vaginal pain](symptom), [Vertigo (Room spinning)](symptom)
+    - Saya ada [Loss of vision (Blindness)](symptom), [Vomiting](symptom), [General weakness](symptom)
+    - Saya ada [Wrist pain](symptom), [Throat pain](symptom), [Tremors](symptom)
+    - Saya ada [Testicle pain](symptom), [Sadness](symptom), [Tongue swelling](symptom)
+    - Saya ada [Swollen lymph nodes (Large lymph nodes)](symptom), [Failure to thrive](symptom), [Behavioral problem](symptom)
+    - Saya ada [Headache after trauma](symptom), [Learning difficulties](symptom), [Blood in urine (Hematuria)](symptom)
+    - Saya ada [Choking](symptom), [Painful rash](symptom), [Sleeping problem](symptom)
+    - Saya ada [Melena (Black stools from blood)](symptom), [Vomiting coffee ground material](symptom), [Ringing in ears (Tinnitus)](symptom)
+    - Saya ada [Eye redness](symptom), [Sneezing](symptom), [Bleeding gums](symptom)
+    - Saya ada [Ataxia (Incoordination)](symptom), [Loss of coordination](symptom), [Slurred speech](symptom)
+    - Saya ada [Cyanosis (Blue skin coloration)](symptom), [Muscle spasm](symptom), [Muscle cramps](symptom)
+    - Saya ada [Skin growths](symptom), [Hand numbness (paresthesias)](symptom), [Ankle pain](symptom)
+    - Saya ada [Night sweats](symptom), [Flatulence (Passing gas)](symptom), [Blister (Pocket of fluid)](symptom)
+    - Saya ada [Impotence](symptom), [Heart murmur (Abnormal heart sound)](symptom), [Bloating](symptom)
+    - Saya ada [Abdominal distension](symptom), [Protruding abdomen](symptom), [Bulging abdomen](symptom)
+    - Saya ada [Painful skin](symptom), [Sore skin](symptom), [Hot skin](symptom)
+    - Saya ada [Swollen skin](symptom), [Lip swelling](symptom), [Swollen lip](symptom)
+    - Saya ada [Swollen mouth](symptom), [Pedal edema](symptom), [Foot swelling](symptom)
+    - Saya ada [Flashes of light](symptom), [Eye floaters](symptom), [Burning with urination](symptom)
+    - Saya ada [Bruising](symptom), [Blue skin tone](symptom), [Irritated eyes](symptom)
+    - Saya ada [Coughing blood](symptom), [Trouble sleeping](symptom), [Yellow skin](symptom)
+    - Saya ada [Sweating at night](symptom), [Collection of pus](symptom), [Drug abuse](symptom)
+    - Saya ada [Throwing up](symptom), [Amenorrhea (No menstruation)](symptom), [Blurry vision](symptom)
+    - Saya ada [Swollen gums](symptom), [Gum swelling](symptom), [Low blood sugar](symptom)
+    - Saya ada [Hyperpigmentation (Darkening skin)](symptom), [Skin darkening](symptom), [Low heart rate](symptom)
+    - Saya ada [Foot itching](symptom), [Itching feet](symptom), [Hot flashes](symptom)
+    - Saya ada [Skipped periods](symptom), [Infertility](symptom), [Sterility](symptom)
+    - Saya ada [Arm swelling](symptom), [Calf swelling](symptom), [Leg swelling](symptom)
+    - Saya ada [Tarry stools](symptom), [Maroon stools](symptom), [Diplopia (Seeing double)](symptom)
+    - Saya ada [Leg cut (laceration)](symptom), [Foot cut (laceration)](symptom), [Arm itching](symptom)
+    - Saya ada [Arm redness](symptom), [Leg redness](symptom), [Hand itching](symptom)
+    - Saya ada [Upper leg pain](symptom), [Thigh pain](symptom), [Armpit pain](symptom)
+    - Saya ada [Nasal congestion](symptom), [Stuffy nose](symptom), [Joint stiffness](symptom)
+    - Saya ada [Chest burning](symptom), [Memory loss](symptom), [Loss of memory](symptom)
+    - Saya ada [Foot numbness (paresthesias)](symptom), [Face numbness (paresthesias)](symptom), [Alopecia (Hair loss)](symptom)
+    - Saya ada [Facial droop (weakness)](symptom), [Limping in a child](symptom), [Childhood limping](symptom)
+    - Saya ada [Shin pain](symptom), [Stings](symptom), [Sleep disorders](symptom)
+    - Saya ada [Snoring](symptom), [Body aches](symptom), [Upset stomach](symptom)
+    - Saya ada [Itchy eyes](symptom), [Blood in stool](symptom), [Skin lesion](symptom)
+    - Saya ada [Chest pain](symptom), [Skin infection](symptom), [Stomach and abdominal pain](symptom)
+    - Saya ada [Fatigue](symptom), [Anger](symptom), [Bitterness](symptom)
+    - Saya ada [Hurts to breathe](symptom), [Difficulty breathing](symptom), [Breathing stopped](symptom)
+    - Saya ada [Skin bumps](symptom), [Room spinning](symptom), [Congestion in chest or lungs](symptom)
+    - Saya ada [Discharge from ear](symptom), [Low back ache or pain](symptom), [Convulsions](symptom)
+    - Saya ada [Loose stools](symptom), [Penis inflammation or swelling](symptom), [Excessive appetite](symptom)
+    - Saya ada [Finger pain](symptom), [Hand, finger swelling](symptom), [Shaking](symptom)
+    - Saya ada [Lump or mass of breast](symptom), [Dry heaves](symptom), [Cant keep food down](symptom)
+    - Saya ada [Agitated](symptom), [Confusion](symptom), [Altered mental status (confusion)](symptom)
+    - Saya ada [Headache and weakness](symptom), [Confusion and headache](symptom), [Nipple discharge](symptom)
+- intent: refill_request
+  examples: |
+    - Refill [Esloric](refill_items), [Emorivir](refill_items), [Aclitol](refill_items)
+    - Refill [Geston](refill_items), [Camlotel](refill_items), [Remivir](refill_items), [Erlonix](refill_items)
+    - Refill [Xinc](refill_items), [Ostocal](refill_items)
+- intent: update_slot
+  examples: |
+    - Saya nak tukar [age](slot).
+    - Saya nak tukar [gender](slot).
+    - Saya nak tukar [symptom](slot).
+    - Saya nak tukar [mobile](slot) number.
+    - Saya nak tukar [department](slot).
+    - Saya nak tukar [doctor](slot).
+    - Saya nak tukar [schedule](slot).
+    - [age](slot).
+    - [gender](slot).
+    - [symptom](slot).
+    - [mobile](slot) number.
+    - [department](slot).
+    - [doctor](slot).
+    - [schedule](slot).
+# - intent: tell_update_slot
+#   examples: |
+#     - 10
+- intent: tell_state
+  examples: |
+    - negeri adalah [AL](state)
+    - negeri adalah [AK](state)
+    - negeri adalah [AZ](state)
+    - negeri adalah [AR](state)
+    - negeri adalah [CA](state)
+    - negeri adalah [CO](state)
+    - negeri adalah [CT](state)
+    - negeri adalah [DE](state)
+    - negeri adalah [DC](state)
+    - negeri adalah [FL](state)
+- intent: tell_city
+  examples: |
+    - bandar adalah [DOTHAN](city)
+    - bandar adalah [BOAZ](city)
+    - bandar adalah [FLORENCE](city)
+    - bandar adalah [BIRMINGHAM](city)
+    - bandar adalah [ALABASTER](city)
+    - bandar adalah [MONTGOMERY](city)
+    - bandar adalah [OPELIKA](city)
+    - bandar adalah [HUNTSVILLE](city)
+    - bandar adalah [GADSDEN](city)
+    - bandar adalah [ANNISTON](city)
+    - bandar adalah [FOLEY](city)
+    - bandar adalah [DECATUR](city)
+    - bandar adalah [MOBILE](city)
+    - bandar adalah [TUSCALOOSA](city)
+    - bandar adalah [FAIRHOPE](city)
+    - bandar adalah [ANCHORAGE](city)
+    - bandar adalah [PHOENIX](city)
+    - bandar adalah [TUCSON](city)
+    - bandar adalah [COTTONWOOD](city)
+    - bandar adalah [PRESCOTT](city)
+    - bandar adalah [YUMA](city)
+    - bandar adalah [FLAGSTAFF](city)
+    - bandar adalah [SCOTTSDALE](city)
+    - bandar adalah [SUN CITY](city)
+    - bandar adalah [SHOW LOW](city)
+    - bandar adalah [MESA](city)
+    - bandar adalah [LAKE HAVASU CIT](city)
+    - bandar adalah [GLENDALE](city)
+    - bandar adalah [SUN CITY WEST](city)
+    - bandar adalah [BULLHEAD CITY](city)
+    - bandar adalah [FAYETTEVILLE](city)
+    - bandar adalah [LITTLE ROCK](city)
+    - bandar adalah [ROGERS](city)
+    - bandar adalah [JONESBORO](city)
+    - bandar adalah [SPRINGDALE](city)
+    - bandar adalah [HOT SPRINGS](city)
+    - bandar adalah [MOUNTAIN HOME](city)
+    - bandar adalah [CONWAY](city)
+    - bandar adalah [NORTH LITTLE RO](city)
+    - bandar adalah [FORT SMITH](city)
+    - bandar adalah [PINE BLUFF](city)
+    - bandar adalah [BATESVILLE](city)
+    - bandar adalah [EUREKA](city)
+    - bandar adalah [BURLINGAME](city)
+    - bandar adalah [SAINT HELENA](city)
+    - bandar adalah [SACRAMENTO](city)
+    - bandar adalah [LA MESA](city)
+    - bandar adalah [BAKERSFIELD](city)
+    - bandar adalah [CHICO](city)
+    - bandar adalah [LANCASTER](city)
+    - bandar adalah [VISALIA](city)
+    - bandar adalah [ORANGE](city)
+    - bandar adalah [SAN DIEGO](city)
+    - bandar adalah [OXNARD](city)
+    - bandar adalah [STOCKTON](city)
+    - bandar adalah [FRESNO](city)
+    - bandar adalah [SANTA MARIA](city)
+    - bandar adalah [ESCONDIDO](city)
+    - bandar adalah [OCEANSIDE](city)
+    - bandar adalah [MARYSVILLE](city)
+    - bandar adalah [FULLERTON](city)
+    - bandar adalah [SANTA ROSA](city)
+    - bandar adalah [TURLOCK](city)
+    - bandar adalah [LONG BEACH](city)
+    - bandar adalah [WALNUT CREEK](city)
+    - bandar adalah [REDWOOD CITY](city)
+    - bandar adalah [CHULA VISTA](city)
+    - bandar adalah [NEWPORT BEACH](city)
+    - bandar adalah [PARADISE](city)
+    - bandar adalah [SAN LUIS OBISPO](city)
+    - bandar adalah [BURBANK](city)
+    - bandar adalah [ARCADIA](city)
+    - bandar adalah [PALM SPRINGS](city)
+    - bandar adalah [LOS ANGELES](city)
+    - bandar adalah [REDDING](city)
+    - bandar adalah [SANTA MONICA](city)
+    - bandar adalah [MOUNTAIN VIEW](city)
+    - bandar adalah [ROSEVILLE](city)
+    - bandar adalah [SALINAS](city)
+    - bandar adalah [TORRANCE](city)
+    - bandar adalah [GREENBRAE](city)
+    - bandar adalah [SAN JOSE](city)
+    - bandar adalah [COVINA](city)
+    - bandar adalah [HEMET](city)
+    - bandar adalah [VENTURA](city)
+    - bandar adalah [SANTA BARBARA](city)
+    - bandar adalah [LA JOLLA](city)
+    - bandar adalah [PASADENA](city)
+    - bandar adalah [STANFORD](city)
+    - bandar adalah [MODESTO](city)
+    - bandar adalah [WEST HILLS](city)
+    - bandar adalah [CONCORD](city)
+    - bandar adalah [CARMICHAEL](city)
+    - bandar adalah [THOUSAND OAKS](city)
+    - bandar adalah [LOS ALAMITOS](city)
+    - bandar adalah [RANCHO MIRAGE](city)
+    - bandar adalah [LAGUNA HILLS](city)
+    - bandar adalah [MURRIETA](city)
+    - bandar adalah [TARZANA](city)
+    - bandar adalah [GREELEY](city)
+    - bandar adalah [DURANGO](city)
+    - bandar adalah [DENVER](city)
+    - bandar adalah [PUEBLO](city)
+    - bandar adalah [COLORADO SPRING](city)
+    - bandar adalah [GRAND JUNCTION](city)
+    - bandar adalah [AURORA](city)
+    - bandar adalah [LOVELAND](city)
+    - bandar adalah [NEW HAVEN](city)
+    - bandar adalah [HARTFORD](city)
+    - bandar adalah [BRIDGEPORT](city)
+    - bandar adalah [ROCKVILLE](city)
+    - bandar adalah [WATERBURY](city)
+    - bandar adalah [MERIDEN](city)
+    - bandar adalah [GREENWICH](city)
+    - bandar adalah [MIDDLETOWN](city)
+    - bandar adalah [NORWICH](city)
+    - bandar adalah [DANBURY](city)
+    - bandar adalah [NORWALK](city)
+    - bandar adalah [NEW BRITAIN](city)
+    - bandar adalah [NEWARK](city)
+    - bandar adalah [DOVER](city)
+    - bandar adalah [LEWES](city)
+    - bandar adalah [WASHINGTON](city)
+    - bandar adalah [BOYNTON BEACH](city)
+    - bandar adalah [ORLANDO](city)
+    - bandar adalah [FORT MYERS](city)
+    - bandar adalah [DAYTONA BEACH](city)
+    - bandar adalah [NAPLES](city)
+    - bandar adalah [MELBOURNE](city)
+    - bandar adalah [INVERNESS](city)
+    - bandar adalah [PENSACOLA](city)
+    - bandar adalah [PANAMA CITY](city)
+    - bandar adalah [TITUSVILLE](city)
+    - bandar adalah [MIAMI BEACH](city)
+    - bandar adalah [BRADENTON](city)
+    - bandar adalah [HOLLYWOOD](city)
+    - bandar adalah [JACKSONVILLE](city)
+    - bandar adalah [STUART](city)
+    - bandar adalah [ZEPHYRHILLS](city)
+    - bandar adalah [PUNTA GORDA](city)
+    - bandar adalah [SEBRING](city)
+    - bandar adalah [WINTER HAVEN](city)
+    - bandar adalah [TAVARES](city)
+    - bandar adalah [OCALA](city)
+    - bandar adalah [SAINT PETERSBUR](city)
+    - bandar adalah [VENICE](city)
+    - bandar adalah [BROOKSVILLE](city)
+    - bandar adalah [ORANGE CITY](city)
+    - bandar adalah [FORT LAUDERDALE](city)
+    - bandar adalah [TAMPA](city)
+    - bandar adalah [PORT CHARLOTTE](city)
+    - bandar adalah [LEESBURG](city)
+    - bandar adalah [SARASOTA](city)
+    - bandar adalah [SAINT AUGUSTINE](city)
+    - bandar adalah [ROCKLEDGE](city)
+    - bandar adalah [LAKE WALES](city)
+    - bandar adalah [VERO BEACH](city)
+    - bandar adalah [KISSIMMEE](city)
+    - bandar adalah [GAINESVILLE](city)
+    - bandar adalah [PALM COAST](city)
+    - bandar adalah [CLEARWATER](city)
+    - bandar adalah [AVENTURA](city)
+    - bandar adalah [TALLAHASSEE](city)
+    - bandar adalah [SOUTH MIAMI](city)
+    - bandar adalah [LAKELAND](city)
+    - bandar adalah [SANFORD](city)
+    - bandar adalah [BOCA RATON](city)
+    - bandar adalah [PALM BEACH GARD](city)
+    - bandar adalah [TRINITY](city)
+    - bandar adalah [DADE CITY](city)
+    - bandar adalah [SEBASTIAN](city)
+    - bandar adalah [FORT WALTON BEA](city)
+    - bandar adalah [ORANGE PARK](city)
+    - bandar adalah [PALATKA](city)
+    - bandar adalah [BRANDON](city)
+    - bandar adalah [CAPE CORAL](city)
+    - bandar adalah [FORT PIERCE](city)
+    - bandar adalah [LARGO](city)
+    - bandar adalah [JUPITER](city)
+    - bandar adalah [HUDSON](city)
+    - bandar adalah [DELRAY BEACH](city)
+    - bandar adalah [PORT SAINT LUCI](city)
+    - bandar adalah [SAFETY HARBOR](city)
+    - bandar adalah [THE VILLAGES](city)
+    - bandar adalah [CULLMAN](city)
+    - bandar adalah [ENTERPRISE](city)
+    - bandar adalah [SELMA](city)
+    - bandar adalah [CHANDLER](city)
+    - bandar adalah [FORT MOHAVE](city)
+    - bandar adalah [SEARCY](city)
+    - bandar adalah [EL DORADO](city)
+    - bandar adalah [RIVERSIDE](city)
+    - bandar adalah [OROVILLE](city)
+    - bandar adalah [OAKLAND](city)
+    - bandar adalah [SAN FRANCISCO](city)
+    - bandar adalah [NORTHRIDGE](city)
+    - bandar adalah [HANFORD](city)
+    - bandar adalah [MONTEREY](city)
+    - bandar adalah [WHITTIER](city)
+    - bandar adalah [PALMDALE](city)
+    - bandar adalah [PORTERVILLE](city)
+    - bandar adalah [MARTINEZ](city)
+    - bandar adalah [APPLE VALLEY](city)
+    - bandar adalah [BERKELEY](city)
+    - bandar adalah [LOMA LINDA](city)
+    - bandar adalah [LODI](city)
+    - bandar adalah [BRAWLEY](city)
+    - bandar adalah [MERCED](city)
+    - bandar adalah [CASTRO VALLEY](city)
+    - bandar adalah [ANTIOCH](city)
+    - bandar adalah [MISSION VIEJO](city)
+    - bandar adalah [FOUNTAIN VALLEY](city)
+    - bandar adalah [CULVER CITY](city)
+    - bandar adalah [LONGMONT](city)
+    - bandar adalah [WHEAT RIDGE](city)
+    - bandar adalah [FORT COLLINS](city)
+    - bandar adalah [ENGLEWOOD](city)
+    - bandar adalah [LITTLETON](city)
+    - bandar adalah [PARKER](city)
+    - bandar adalah [STAMFORD](city)
+    - bandar adalah [NEW LONDON](city)
+    - bandar adalah [DERBY](city)
+    - bandar adalah [FARMINGTON](city)
+    - bandar adalah [MIAMI](city)
+    - bandar adalah [OCOEE](city)
+    - bandar adalah [DUNEDIN](city)
+    - bandar adalah [DELAND](city)
+    - bandar adalah [HIALEAH](city)
+    - bandar adalah [NEW PORT RICHEY](city)
+    - bandar adalah [ATLANTIS](city)
+    - bandar adalah [LEHIGH ACRES](city)
+    - bandar adalah [CRESTVIEW](city)
+    - bandar adalah [PLANT CITY](city)
+    - bandar adalah [DAVENPORT](city)
+    - bandar adalah [KEY WEST](city)
+    - bandar adalah [LAKE CITY](city)
+    - bandar adalah [TAMARAC](city)
+    - bandar adalah [PLANTATION](city)
+    - bandar adalah [CRYSTAL RIVER](city)
+    - bandar adalah [SUN CITY CENTER](city)
+    - bandar adalah [PEMBROKE PINES](city)
+    - bandar adalah [WEST PALM BEACH](city)
+    - bandar adalah [WESTON](city)
+    - bandar adalah [CORAL GABLES](city)
+    - bandar adalah [SAINT CLOUD](city)
+    - bandar adalah [GEORGIANA](city)
+    - bandar adalah [GUNTERSVILLE](city)
+    - bandar adalah [SHEFFIELD](city)
+    - bandar adalah [VALLEY](city)
+    - bandar adalah [FAYETTE](city)
+    - bandar adalah [MOULTON](city)
+    - bandar adalah [BESSEMER](city)
+    - bandar adalah [FAIRBANKS](city)
+    - bandar adalah [GILBERT](city)
+    - bandar adalah [HARRISON](city)
+    - bandar adalah [NAPA](city)
+    - bandar adalah [NATIONAL CITY](city)
+    - bandar adalah [EL CENTRO](city)
+    - bandar adalah [SAN PEDRO](city)
+    - bandar adalah [SAN PABLO](city)
+    - bandar adalah [UPLAND](city)
+    - bandar adalah [VALLEJO](city)
+    - bandar adalah [LYNWOOD](city)
+    - bandar adalah [VAN NUYS](city)
+    - bandar adalah [SAN BERNARDINO](city)
+    - bandar adalah [SAN GABRIEL](city)
+    - bandar adalah [GRASS VALLEY](city)
+    - bandar adalah [FREMONT](city)
+    - bandar adalah [ANAHEIM](city)
+    - bandar adalah [GARDEN GROVE](city)
+    - bandar adalah [POMONA](city)
+    - bandar adalah [SANTA CRUZ](city)
+    - bandar adalah [COLTON](city)
+    - bandar adalah [PLACERVILLE](city)
+    - bandar adalah [REDLANDS](city)
+    - bandar adalah [MISSION HILLS](city)
+    - bandar adalah [ALHAMBRA](city)
+    - bandar adalah [PLEASANTON](city)
+    - bandar adalah [DALY CITY](city)
+    - bandar adalah [MORENO VALLEY](city)
+    - bandar adalah [TRACY](city)
+    - bandar adalah [CORONA](city)
+    - bandar adalah [SONORA](city)
+    - bandar adalah [MONTEBELLO](city)
+    - bandar adalah [TULARE](city)
+    - bandar adalah [FAIRFIELD](city)
+    - bandar adalah [DOWNEY](city)
+    - bandar adalah [GARDENA](city)
+    - bandar adalah [AUBURN](city)
+    - bandar adalah [ENCINITAS](city)
+    - bandar adalah [INDIO](city)
+    - bandar adalah [LAKEWOOD](city)
+    - bandar adalah [CHINO](city)
+    - bandar adalah [SAN DIMAS](city)
+    - bandar adalah [CAMARILLO](city)
+    - bandar adalah [VALENCIA](city)
+    - bandar adalah [POWAY](city)
+    - bandar adalah [VICTORVILLE](city)
+    - bandar adalah [MONTEREY PARK](city)
+    - bandar adalah [INGLEWOOD](city)
+    - bandar adalah [MARINA DEL REY](city)
+    - bandar adalah [SANTA ANA](city)
+    - bandar adalah [SHERMAN OAKS](city)
+    - bandar adalah [BOULDER](city)
+    - bandar adalah [TORRINGTON](city)
+    - bandar adalah [MILFORD](city)
+    - bandar adalah [MANCHESTER](city)
+    - bandar adalah [WILMINGTON](city)
+    - bandar adalah [NEW SMYRNA BEAC](city)
+    - bandar adalah [POMPANO BEACH](city)
+    - bandar adalah [HOMESTEAD](city)
+    - bandar adalah [MARIANNA](city)
+    - bandar adalah [COCOA BEACH](city)
+    - bandar adalah [MARGATE](city)
+    - bandar adalah [OKEECHOBEE](city)
+    - bandar adalah [SCOTTSBORO](city)
+    - bandar adalah [ALEXANDER CITY](city)
+    - bandar adalah [PARAGOULD](city)
+    - bandar adalah [FORT PAYNE](city)
+    - bandar adalah [TALLASSEE](city)
+    - bandar adalah [ANDALUSIA](city)
+    - bandar adalah [ATHENS](city)
+    - bandar adalah [JASPER](city)
+    - bandar adalah [WETUMPKA](city)
+    - bandar adalah [BREWTON](city)
+    - bandar adalah [EVERGREEN](city)
+    - bandar adalah [RUSSELLVILLE](city)
+    - bandar adalah [SIERRA VISTA](city)
+    - bandar adalah [GOODYEAR](city)
+    - bandar adalah [DANVILLE](city)
+    - bandar adalah [WEST MEMPHIS](city)
+    - bandar adalah [NEWPORT](city)
+    - bandar adalah [BENTON](city)
+    - bandar adalah [HAYWARD](city)
+    - bandar adalah [MANTECA](city)
+    - bandar adalah [HOLLISTER](city)
+    - bandar adalah [SUN VALLEY](city)
+    - bandar adalah [SEBASTOPOL](city)
+    - bandar adalah [FOLSOM](city)
+    - bandar adalah [MADERA](city)
+    - bandar adalah [LA PALMA](city)
+    - bandar adalah [GLENDORA](city)
+    - bandar adalah [TEMPLETON](city)
+    - bandar adalah [SAN RAMON](city)
+    - bandar adalah [PANORAMA CITY](city)
+    - bandar adalah [CANON CITY](city)
+    - bandar adalah [DELTA](city)
+    - bandar adalah [WESTMINSTER](city)
+    - bandar adalah [LONE TREE](city)
+    - bandar adalah [PUTNAM](city)
+    - bandar adalah [SHARON](city)
+    - bandar adalah [WILLIMANTIC](city)
+    - bandar adalah [BRISTOL](city)
+    - bandar adalah [SEAFORD](city)
+    - bandar adalah [TARPON SPRINGS](city)
+    - bandar adalah [JACKSONVILLE BE](city)
+    - bandar adalah [BARTOW](city)
+    - bandar adalah [GULF BREEZE](city)
+    - bandar adalah [LOXAHATCHEE](city)
+    - bandar adalah [WELLINGTON](city)
+    - bandar adalah [CORAL SPRINGS](city)
+    - bandar adalah [MIRAMAR](city)
+    - bandar adalah [TALLADEGA](city)
+    - bandar adalah [PALMER](city)
+    - bandar adalah [CASA GRANDE](city)
+    - bandar adalah [JACKSON](city)
+    - bandar adalah [SYLMAR](city)
+    - bandar adalah [SIMI VALLEY](city)
+    - bandar adalah [UKIAH](city)
+    - bandar adalah [MONTCLAIR](city)
+    - bandar adalah [MONTROSE](city)
+    - bandar adalah [PRATTVILLE](city)
+    - bandar adalah [SYLACAUGA](city)
+    - bandar adalah [KINGMAN](city)
+    - bandar adalah [SAFFORD](city)
+    - bandar adalah [ORO VALLEY](city)
+    - bandar adalah [PRESCOTT VALLEY](city)
+    - bandar adalah [SONOMA](city)
+    - bandar adalah [PETALUMA](city)
+    - bandar adalah [RIDGECREST](city)
+    - bandar adalah [ALAMOSA](city)
+    - bandar adalah [CLERMONT](city)
+    - bandar adalah [FERNANDINA BEAC](city)
+    - bandar adalah [OZARK](city)
+    - bandar adalah [GENEVA](city)
+    - bandar adalah [WINFIELD](city)
+    - bandar adalah [TROY](city)
+    - bandar adalah [ATMORE](city)
+    - bandar adalah [MENA](city)
+    - bandar adalah [POCAHONTAS](city)
+    - bandar adalah [STUTTGART](city)
+    - bandar adalah [HOPE](city)
+    - bandar adalah [RED BLUFF](city)
+    - bandar adalah [WATSONVILLE](city)
+    - bandar adalah [ALAMEDA](city)
+    - bandar adalah [CRESCENT CITY](city)
+    - bandar adalah [CLOVIS](city)
+    - bandar adalah [HUNTINGTON BEAC](city)
+    - bandar adalah [HAWAIIAN GARDEN](city)
+    - bandar adalah [GILROY](city)
+    - bandar adalah [LA JUNTA](city)
+    - bandar adalah [STAFFORD SPRING](city)
+    - bandar adalah [NEW MILFORD](city)
+    - bandar adalah [WALLINGFORD](city)
+    - bandar adalah [WEST HARTFORD](city)
+    - bandar adalah [MIRAMAR BEACH](city)
+    - bandar adalah [NICEVILLE](city)
+    - bandar adalah [OPP](city)
+    - bandar adalah [HARTSELLE](city)
+    - bandar adalah [CENTRE](city)
+    - bandar adalah [CLANTON](city)
+    - bandar adalah [HAMILTON](city)
+    - bandar adalah [ONEONTA](city)
+    - bandar adalah [EUTAW](city)
+    - bandar adalah [DADEVILLE](city)
+    - bandar adalah [EUFAULA](city)
+    - bandar adalah [ASHLAND](city)
+    - bandar adalah [CARROLLTON](city)
+    - bandar adalah [MONROEVILLE](city)
+    - bandar adalah [HALEYVILLE](city)
+    - bandar adalah [BAY MINETTE](city)
+    - bandar adalah [PELL CITY](city)
+    - bandar adalah [NORTHPORT](city)
+    - bandar adalah [MUSCLE SHOALS](city)
+    - bandar adalah [PHENIX CITY](city)
+    - bandar adalah [JUNEAU](city)
+    - bandar adalah [SOLDOTNA](city)
+    - bandar adalah [PAYSON](city)
+    - bandar adalah [SILOAM SPRINGS](city)
+    - bandar adalah [CLARKSVILLE](city)
+    - bandar adalah [VAN BUREN](city)
+    - bandar adalah [CAMDEN](city)
+    - bandar adalah [MAGNOLIA](city)
+    - bandar adalah [MALVERN](city)
+    - bandar adalah [HELENA](city)
+    - bandar adalah [SHERWOOD](city)
+    - bandar adalah [ARROYO GRANDE](city)
+    - bandar adalah [ARCATA](city)
+    - bandar adalah [BANNING](city)
+    - bandar adalah [OAKDALE](city)
+    - bandar adalah [HUNTINGTON PARK](city)
+    - bandar adalah [LOMPOC](city)
+    - bandar adalah [JOSHUA TREE](city)
+    - bandar adalah [BARSTOW](city)
+    - bandar adalah [BLYTHE](city)
+    - bandar adalah [LOS BANOS](city)
+    - bandar adalah [BELLFLOWER](city)
+    - bandar adalah [PLACENTIA](city)
+    - bandar adalah [DELANO](city)
+    - bandar adalah [SOUTH EL MONTE](city)
+    - bandar adalah [BRIGHTON](city)
+    - bandar adalah [THORNTON](city)
+    - bandar adalah [STERLING](city)
+    - bandar adalah [JAY](city)
+    - bandar adalah [DEFUNIAK SPRING](city)
+    - bandar adalah [PERRY](city)
+    - bandar adalah [MILTON](city)
+    - bandar adalah [BELLE GLADE](city)
+    - bandar adalah [PALM BAY](city)
+    - bandar adalah [TUBA CITY](city)
+    - bandar adalah [MONTICELLO](city)
+    - bandar adalah [WOODLAND](city)
+    - bandar adalah [FONTANA](city)
+    - bandar adalah [ENCINO](city)
+    - bandar adalah [FALLBROOK](city)
+    - bandar adalah [LOUISVILLE](city)
+    - bandar adalah [LAFAYETTE](city)
+- intent: tell_procedure
+  examples: |
+    - prosedur ialah [EXTRACRANIAL PROCEDURES](procedure)
+    - prosedur ialah [DEGENERATIVE NERVOUS SYSTEM DISORDERS](procedure)
+    - prosedur ialah [TRANSIENT ISCHEMIA](procedure)
+    - prosedur ialah [INTRACRANIAL HEMORRHAGE OR CEREBRAL INFARCTION](procedure)
+    - prosedur ialah [SEIZURES](procedure)
+    - prosedur ialah [DYSEQUILIBRIUM](procedure)
+    - prosedur ialah [PULMONARY EMBOLISM](procedure)
+    - prosedur ialah [RESPIRATORY INFECTIONS & INFLAMMATIONS](procedure)
+    - prosedur ialah [CHRONIC OBSTRUCTIVE PULMONARY DISEASE](procedure)
+    - prosedur ialah [SIMPLE PNEUMONIA & PLEURISY](procedure)
+- intent: human_handoff
+  examples: |
+    - Saya nak bercakap dengan live agent
+    - Boleh saya bercakap dengan live agent
+    - Tolong dapatkan saya live agent
+    - Manusia
+    - chat dengan live agent
+    - give me a person please
+    - Saya nak bercakap dengan manusia
+    - Boleh transfer saya ke manusia?
+    - handoff
+    - cakap dengan manusia
+    - Saya perlu bercakap dengan manusia
+    - Tolong dapatkan saya manusia
+    - Saya perlukan bantuan manusia
+    - Saya perlukan manusia
+    - Tolong bagi sayang manusia
+    - Saya nak bercakap dengan manusia
+    - Saya nak wakil anda
+    - Saya nak bercakap dengan manusia betul
+    - Saya taknak bercakap dengan bot
+    - Saya tak suka bercakap dengan manusia
+    - Saya nak bercakap dengan founder
+    - Adakah manusia yang bekerja dalam syarikat anda
+    - Boleh saya bercakap dengan seseorang?
+    - Boleh bantu saya untuk bercakap dengan seseorang
+    - Boleh forward kan saya ke team?
+    - Boleh connect kan saya ke salah seorang team awak?
+    - Saya nak bercakap dengan team awak
+    - Ada support team tak ?
+    - Beri saya support team
+    - Adakah support team anda ada?
+    - human handoff
+    - Saya taknak bot
+    - oleh sayang bercakap dengan org yg terlibat
+    - I nak bercakap dengan customer service anda
+    - Saya nak chat dengan seseorang
+    - Saya nak bercakap dengan sesorang yang aktif sekarang
+    - saya nak cakap dengan pekerja anda yang bertugas
+    - saya nak cakap dengan pekerja yang aktif 
+    - saya nak cakap dengan pekerja anda?
+    - saya nak cakap dengan pekerja anda
+    - Tolong dapatkan customer care anda
+    - Tolong dapatkan customer agent anda
+    - Tolong dapatkan customer service anda
+    - service agent
+    - Seseorang daripada customer service
+    - Chat kepada manusia yang betul
+    - Bazir masa untuk saya bercakap dengan bot
+    - Saya perlukan bantuan live agent
+    - Ia sgt tak membantu, boleh dapatkan wakil anda
+    - Saya nak chat dengan wakil anda sebentar?
+    - Saya nak chat dengan live agent sebenar?
+    - Saya nak chat dengan manusia?
+    - Saya nak chat dengan manusia
+    - Bagaimana nak bercakap dengan agent
+    - Boleh dapat kan agent anda untuk bantu saya
+    - Boleh dapat kan live agent anda untuk bantu saya
+    - takpelah… tak perlu cakap dengan awak, saya nak manusia
+    - Boleh dapat kan wakil anda untuk bantu saya
+    - Boleh saya speak dengan manusia sebenar?
+    - Boleh saya speak dengan manusia sebenar
+    - Boleh saya bercakap dengan manusia sebenar?
+    - Boleh saya bercakap dengan manusia sebenar
+    - Tak, saya nak bercakap dengan live agent
+    - Boleh pass kan conversation ni ke live agent?
+    - Boleh saya bercakap dengan live agent?
+    - Boleh saya bercakap dengan live agent
+    - Saya nak live agent :(
+    - Saya nak bercakap dengan manusia yang terlibat
+    - Saya nak bercakap dengan manusia
+    - Boleh saya bercakap dengan orang yang bertanggungjawap
+    - connect saya ke seseorang
+    - Saya nak manusia yang betul
+    - Saya nak becakap dengan manusa atau seseorang dari team anda
+    - Please tolong saya bercakap dengan seseorang
+    - Tolong dapatkan saya seseorang
+    - Saya nak bercakap dengan manusia yang betul
+
