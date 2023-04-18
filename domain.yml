@@ -192,6 +192,8 @@ responses:
   - text: Saya minta maaf, saya tidak begitu memahaminya. Bolehkah anda mengutarakan semula?
   utter_ask_mobile:
   - text: Sila berikan nombor telefon bimbit anda (ia mestilah sekurang-kurangnya 10 digit).
+  utter_wrong_num_mobile:
+    - text: "ia mestilah sekurang-kurangnya 10 digit, sila cuba lagi"
   utter_ask_age:
   - text: "Berapa umur anda? Cth. 25 tahun, 50 tahun"
   utter_ask_gender:
@@ -261,6 +263,7 @@ actions:
 - utter_drop_value
 - utter_report
 - utter_general_custom
+- utter_wrong_num_mobile
 - action_utter_state
 - action_utter_cheaper_city
 - action_utter_city

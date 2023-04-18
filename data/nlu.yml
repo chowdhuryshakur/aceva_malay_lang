@@ -183,6 +183,7 @@ nlu:
 - intent: tell_symptom
   examples: |
     - Saya ada [Flu](symptom), [fever](symptom), [cough](symptom), [Migrain](symptom)
+    - Saya ada [Demam](symptom), [Batuk](symptom), [Sakit](symptom), [Kepala](symptom), [Selsema](symptom)
     - Saya ada serious [Back pain](symptom), [fever](symptom)
     - Suffering from [Flue](symptom), [headache](symptom)
     - Saya ada [Upper abdominal pain](symptom), [Upper belly pain](symptom), [Lower abdominal pain](symptom)
